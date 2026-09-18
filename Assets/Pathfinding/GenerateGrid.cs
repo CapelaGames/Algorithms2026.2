@@ -6,7 +6,7 @@ namespace MyPathFinding
     {
         public Node prefab;
 
-        private int rows = 25, cols = 25;
+        public int rows = 25, cols = 25;
         private float gap = 1f;
 
 

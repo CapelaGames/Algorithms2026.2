@@ -8,6 +8,14 @@ namespace MyPathFinding
     {
         public List<Node> Neighbours;
 
+        public float Heuristic { get; private set; }
+
+        public float HeuristicPathWeigth
+        {
+            get => Heuristic + PathWeight;
+        }
+        
+
         private float pathWeight;
         public float PathWeight
         {
@@ -25,9 +33,17 @@ namespace MyPathFinding
         public void Reset()
         {
             PathWeight = float.PositiveInfinity;
+            Heuristic = 0;
+            PreviousNode = null;
         }
 
-        private void OnDrawGizmos()
+        public float SetHeuristic(Vector3 goal)
+        {
+            Heuristic = Vector3.Distance(transform.position, goal);
+            return Heuristic;
+        }
+
+        private void OnDrawGizmosSelected()
         {
             Gizmos.color = Color.blue;
             Gizmos.DrawSphere(transform.position, 0.2f);

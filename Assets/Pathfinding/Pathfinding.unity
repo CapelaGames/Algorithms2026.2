@@ -209,8 +209,10 @@ GameObject:
   m_Component:
   - component: {fileID: 674956069}
   - component: {fileID: 674956068}
+  - component: {fileID: 674956070}
+  - component: {fileID: 674956071}
   m_Layer: 0
-  m_Name: Pathfid
+  m_Name: Pathfind
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -228,8 +230,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b95bd60d8e6c447ab5a605a49334e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MyPathFinding.Dijkstra
-  testStartNode: {fileID: 1262548867}
-  testEndNode: {fileID: 234138294}
+  testStartNode: {fileID: 0}
+  testEndNode: {fileID: 0}
 --- !u!4 &674956069
 Transform:
   m_ObjectHideFlags: 0
@@ -245,6 +247,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &674956070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674956067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c262f71e5b0d74d40a584eb6f0f8770d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MyPathFinding.AStar
+  testStartNode: {fileID: 0}
+  testEndNode: {fileID: 0}
+--- !u!114 &674956071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 674956067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abd7dbf8c4e508b488b051aa199fb8da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RunningMan
+  pathfinder1: {fileID: 674956068}
+  pathfinder2: {fileID: 674956070}
 --- !u!1 &1125601340
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +432,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MyPathFinding.GenerateGrid
   prefab: {fileID: 2997437958644948651, guid: 32854b943b00d5d45a7fafc3c8b1b786, type: 3}
+  rows: 250
+  cols: 250
 --- !u!4 &1149993499
 Transform:
   m_ObjectHideFlags: 0
@@ -411,7 +443,7 @@ Transform:
   m_GameObject: {fileID: 1149993497}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.67, y: 9.1, z: 1.60438}
+  m_LocalPosition: {x: 9.82, y: 9.1, z: 8.6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -849,8 +881,8 @@ SceneRoots:
   - {fileID: 1125601342}
   - {fileID: 1262548868}
   - {fileID: 1911709474}
-  - {fileID: 8433848496319971715}
   - {fileID: 674956069}
+  - {fileID: 8433848496319971715}
   - {fileID: 1217970313}
   - {fileID: 1247453933}
   - {fileID: 234138293}

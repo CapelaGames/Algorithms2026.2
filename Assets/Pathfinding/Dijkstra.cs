@@ -57,7 +57,7 @@ namespace MyPathFinding
             return null;
         }
 
-        protected void SetUnexplored(List<Node> unexplored)
+        protected virtual void SetUnexplored(List<Node> unexplored)
         {
             foreach (var node in nodesInScene)
             {
